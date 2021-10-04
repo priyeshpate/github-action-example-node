@@ -5,7 +5,7 @@ jobs:
     name: build and publish
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
       - name: npm install
         uses: actions/npm@master
         with:
@@ -23,7 +23,7 @@ jobs:
         with:
           args: build -t priyeshpate /github-action-example-node  .
       - name: docker login
-        uses: actions/docker/login@master
+        uses: actions/docker/login@v2
         env:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
